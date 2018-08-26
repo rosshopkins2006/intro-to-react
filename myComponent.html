@@ -14,17 +14,25 @@
 		<script type="text/babel">
 			class MyFirstComponent extends React.Component{
 
+				constructor(props){
+					super(props);
+					this.state = {
+						myState: "This is my state"
+					}
+				}
+
 				render(){
 					return(
 						<div>
-							<h1>{this.props.myComponent}</h1>
+							<h1>{this.props.myProp}</h1>
+							<h1>{this.state.myState}</h1>
 						</div>
 					);
 				}
 			}
 
 			MyFirstComponent.defaultProps = {
-				myComponent: "This is my prop"
+				myProp: "This is my prop"
 			}
 
 			ReactDOM.render
