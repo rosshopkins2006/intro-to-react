@@ -5,7 +5,7 @@
     <title>Welcome to Bloc</title>
   </head>
   <body<>
-
+<!--loading all the react script-->
     <div id="app"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
@@ -15,18 +15,33 @@
     <script type="text/babel">
 
       class Counter extends React.Component {
+/*learning about states initialization*/
         constructor(props){
           super(props);
           this.state = {
             number: 1
           }
         }
+/* increment and decremenet functions for event checkpoint*/
+        increment(event){
+          this.setState({
+            number: this.state.number + 1
+          })
+        }
+        decrement(event){
+          this.setState({
+            number: Math.max(1, this.state.number -1)
+          })
+        }
+/*Information about bloc student*/
+/*Added increment and decrement buttons*/
         render(){
           return(
             <div>
               <img src={this.props.image} alt="Bloc Logo"/>
               <h2>Current program: {this.props.label}</h2>
                 <h3>Current week: {this.state.number}</h3>
+
                 <button onClick={this.increment.bind(this)}>Icrement</button>
                 <button onClick={this.decrement.bind(this)}>Decrement</button>
               <p>Current Date: {this.props.date.toLocaleDateString()}</p>
@@ -39,7 +54,7 @@
         date: new Date(),
         image: 'https://avatars0.githubusercontent.com/u/1441485?v=4&s=280',
       }
-
+/*Learning about props*/
       Counter.defaultProps = {
         label: "Web Developer Track"
       }
