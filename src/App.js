@@ -13,7 +13,7 @@ class App extends Component {
       ]
     };
   }
-}
+
 
   render() {
     return (
@@ -21,7 +21,7 @@ class App extends Component {
         <ul>
           <ToDo />
           <ToDo />
-          {this.state.todo.map((todo, index) =>
+          {this.state.todos.map((todo, index) =>
             <ToDo key={ index } />
           )}
         </ul>
